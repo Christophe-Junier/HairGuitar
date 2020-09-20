@@ -47,8 +47,8 @@ jobs:
       # Run rspec in parallel
       # - ruby/rspec-test
       # - ruby/rubocop-check
-      - codecov/upload:
-          file: {{ coverage_report_filepath }}
+      # - codecov/upload:
+      #     file: {{ coverage_report_filepath }}
 
 workflows:
   version: 2

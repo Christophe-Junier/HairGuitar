@@ -14,7 +14,8 @@ The setups steps expect following tools installed on the system.
 - Ruby [2.7.1](https://www.ruby-lang.org/en/news/2020/03/31/ruby-2-7-1-released/)
 - Rails [6.0.3](https://guides.rubyonrails.org/getting_started.html)
 - Postgresql[Installation on linux systems](https://www.veremes.com/installation-postgresql-linux)
- 
+- Google API Key [Comment ça marche ?](https://developers.google.com/maps/documentation/javascript/get-api-key)
+
 
 ##### 1. Check out the repository
 
