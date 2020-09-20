@@ -3,6 +3,7 @@ version: 2.1
 orbs:
   ruby: circleci/ruby@1.1.0
   node: circleci/node@2
+  codecov: codecov/codecov@1.0.2
 
 jobs:
   build:
@@ -46,6 +47,8 @@ jobs:
       # Run rspec in parallel
       # - ruby/rspec-test
       # - ruby/rubocop-check
+      - codecov/upload:
+          file: {{ coverage_report_filepath }}
 
 workflows:
   version: 2
