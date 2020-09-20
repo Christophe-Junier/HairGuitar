@@ -3,7 +3,7 @@
 
 Test Project for WeCasa: Haircut booking platform
 
-[![CircleCI](https://circleci.com/github/Christophe-Junier/HairGuitar.svg?style=svg&circle-token=213527000e0c50498dd637b0ea77f7c7e586bacc)](<LINK>)
+[![CircleCI](https://circleci.com/gh/Christophe-Junier/HairGuitar.svg?style=svg&circle-token=213527000e0c50498dd637b0ea77f7c7e586bacc)](https://circleci.com/gh/Christophe-Junier/HairGuitar)
 
 
 ##### Prerequisites
