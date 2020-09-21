@@ -2,7 +2,7 @@
 
 FactoryBot.define do
   factory :pro do
-    name           { 'John Do'}
+    name           { 'John Do' }
     address        { '17 rue Camélinat 42000 Saint-Etienne' }
     max_kilometers { 40 }
     lat            { 1.1 }
