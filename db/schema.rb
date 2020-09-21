@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_09_21_085056) do
+ActiveRecord::Schema.define(version: 2020_09_21_085714) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,6 +27,10 @@ ActiveRecord::Schema.define(version: 2020_09_21_085056) do
   create_table "booked_prestations", force: :cascade do |t|
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "prestation_id", null: false
+    t.bigint "booking_id", null: false
+    t.index ["booking_id"], name: "index_booked_prestations_on_booking_id"
+    t.index ["prestation_id"], name: "index_booked_prestations_on_prestation_id"
   end
 
   create_table "bookings", force: :cascade do |t|
@@ -70,8 +74,16 @@ ActiveRecord::Schema.define(version: 2020_09_21_085056) do
   create_table "pros_prestations", force: :cascade do |t|
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "pro_id", null: false
+    t.bigint "prestation_id", null: false
+    t.index ["prestation_id"], name: "index_pros_prestations_on_prestation_id"
+    t.index ["pro_id"], name: "index_pros_prestations_on_pro_id"
   end
 
   add_foreign_key "appointments", "pros"
+  add_foreign_key "booked_prestations", "bookings"
+  add_foreign_key "booked_prestations", "prestations"
   add_foreign_key "opening_hours", "pros"
+  add_foreign_key "pros_prestations", "prestations"
+  add_foreign_key "pros_prestations", "pros"
 end
