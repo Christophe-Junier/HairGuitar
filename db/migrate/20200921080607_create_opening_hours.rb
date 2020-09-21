@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# Migration that add the table OpeningHour
 class CreateOpeningHours < ActiveRecord::Migration[6.0]
   def change
     create_table :opening_hours do |t|

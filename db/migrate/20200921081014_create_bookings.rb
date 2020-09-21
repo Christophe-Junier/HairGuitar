@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# Migration that add the table booking
 class CreateBookings < ActiveRecord::Migration[6.0]
   def change
     create_table :bookings do |t|
