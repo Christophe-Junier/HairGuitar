@@ -3,10 +3,10 @@
 require 'simplecov'
 SimpleCov.start
 
-# if ENV['CI'] == 'true'
-require 'codecov'
-SimpleCov.formatter = SimpleCov::Formatter::Codecov
-# end
+if ENV['CI'] == 'true'
+  require 'codecov'
+  SimpleCov.formatter = SimpleCov::Formatter::Codecov
+end
 
 RSpec.configure do |config|
   config.expect_with :rspec do |expectations|
