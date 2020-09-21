@@ -8,12 +8,24 @@
           1,
           null,
           1,
-          1,
+          4,
+          2,
+          2,
+          2,
+          2,
+          null,
           1,
           1,
           null,
           null,
           1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          null,
+          null,
           1,
           1,
           null,
@@ -56,6 +68,7 @@
           0,
           0,
           null,
+          1,
           1,
           null,
           1,
@@ -527,6 +540,94 @@
           null
         ]
       },
+      "/home/christophe/Bureau/HairGuitar/spec/factories/appointments.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          1,
+          4,
+          4,
+          null,
+          null
+        ]
+      },
+      "/home/christophe/Bureau/HairGuitar/spec/factories/booked_prestations.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "/home/christophe/Bureau/HairGuitar/spec/factories/bookings.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "/home/christophe/Bureau/HairGuitar/spec/factories/opening_hours.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "/home/christophe/Bureau/HairGuitar/spec/factories/prestations.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "/home/christophe/Bureau/HairGuitar/spec/factories/pros.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          1,
+          4,
+          4,
+          4,
+          4,
+          4,
+          null,
+          null
+        ]
+      },
+      "/home/christophe/Bureau/HairGuitar/spec/factories/pros_prestations.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
       "/home/christophe/Bureau/HairGuitar/config/routes.rb": {
         "lines": [
           null,
@@ -735,6 +836,6 @@
         ]
       }
     },
-    "timestamp": 1600689207
+    "timestamp": 1600694808
   }
 }
