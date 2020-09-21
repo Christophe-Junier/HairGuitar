@@ -1,0 +1,2 @@
+class BookedPrestation < ApplicationRecord
+end

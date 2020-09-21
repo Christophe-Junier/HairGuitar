@@ -1,0 +1,2 @@
+class ProsPrestation < ApplicationRecord
+end
