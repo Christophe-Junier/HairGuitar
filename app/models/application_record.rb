@@ -8,6 +8,6 @@ class ApplicationRecord < ActiveRecord::Base
     # GOOGLE API CALL SERVICE WILL BE CALLED THERE
     # coordinates = AddressToCoordinatesService.new(self.address)
     # self.lat = coordinates.lat
-    # self.long = coordinates.long
+    # self.lng = coordinates.lng
   end
 end
