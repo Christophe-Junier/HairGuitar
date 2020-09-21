@@ -8,7 +8,7 @@ class CreatePros < ActiveRecord::Migration[6.0]
       t.string :address
       t.decimal :lat, precision: 10, scale: 6
       t.decimal :long, precision: 10, scale: 6
-      t.int :max_kilometers
+      t.integer :max_kilometers
 
       t.timestamps
     end
