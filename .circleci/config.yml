@@ -44,11 +44,10 @@ jobs:
       - run:
           name: Database setup
           command: bundle exec rails db:schema:load --trace
-      # Run rspec in parallel
-      # - ruby/rspec-test
-      # - ruby/rubocop-check
-      # - codecov/upload:
-      #     file: {{ coverage_report_filepath }}
+      - ruby/rspec-test
+      - ruby/rubocop-check
+      - codecov/upload:
+          file: coverage.xml
 
 workflows:
   version: 2

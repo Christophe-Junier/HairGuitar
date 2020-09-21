@@ -3,5 +3,13 @@
 require 'rails_helper'
 
 RSpec.describe Appointment, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  it "is not valid without a start date" do
+    appointment = Appointment.new(starts_at: nil, ends_at: DateTime.now )
+    expect(appointment).to_not be_valid
+  end
+
+  it "is not valid without an end date" do
+    appointment = Appointment.new(starts_at: DateTime.now, ends_at: nil,)
+    expect(appointment).to_not be_valid
+  end
 end
