@@ -6,4 +6,7 @@ class Prestation < ApplicationRecord
   has_many :bookings, through: :booked_prestations
   has_many :pros_prestations
   has_many :pros, through: :pros_prestations
+
+  validates :reference, presence: true
+  validates :duration, presence: true
 end
