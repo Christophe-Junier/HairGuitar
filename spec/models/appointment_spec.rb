@@ -9,19 +9,19 @@ RSpec.describe Appointment, type: :model do
   let(:no_pro_appointment) { build(:appointment) }
   let(:appointment) { build(:appointment, pro_id: pro.id) }
 
-  it "is unvalid without a starting date" do
+  it 'is unvalid without a starting date' do
     expect(no_starting_date_appointment).to_not be_valid
   end
 
-  it "is unvalid without an ending date" do
+  it 'is unvalid without an ending date' do
     expect(no_ending_date_appointment).to_not be_valid
   end
 
-  it "is unvalid without a pro id" do
+  it 'is unvalid without a pro id' do
     expect(no_pro_appointment).to_not be_valid
   end
 
-  it "is valid" do
+  it 'is valid' do
     expect(appointment).to be_valid
   end
 end

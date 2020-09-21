@@ -2,7 +2,7 @@
 
 FactoryBot.define do
   factory :prestation do
-    reference { 'Haircut'}
+    reference { 'Haircut' }
     duration  { 30 }
   end
 end
