@@ -55,10 +55,12 @@ bundle exec rake db:seeds
 
 ##### 4.2 Fill the database with json file
 
-Run the following commands to seed the database.
+1- Put the json file on the root of the project /HairGuitar (the file MUST be named data.json)
+
+2- Run the following commands to seed the database.
 
 ```ruby
-bundle exec rake json:import
+  rake db:json:import
 ```
 
 ##### 5. Start the Rails server
