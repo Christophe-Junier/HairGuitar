@@ -43,7 +43,8 @@ namespace :db do
                                     starts_at: booking.starts_at,
                                     address: booking.address,
                                     lat: booking.lat,
-                                    lng: booking.lng)
+                                    lng: booking.lng,
+                                    pro_id: booking.pro_id)
       booking.prestations.each { |booked_prestation| booked_prestation_creation(booked_prestation, this_booking) }
     end
 
