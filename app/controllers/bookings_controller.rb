@@ -1,5 +1,7 @@
-class BookingsController < ApplicationController
+# frozen_string_literal: true
 
+# Controller to start doing a booking selection what you want and who you are
+class BookingsController < ApplicationController
   def new
     @booking = Booking.new
   end

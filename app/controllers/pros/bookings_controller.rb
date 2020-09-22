@@ -1,13 +1,16 @@
-class Pros::BookingsController < ApplicationController
+# frozen_string_literal: true
 
-  def new
-    @pros = Pro.joins(:prestations).select('count(*) as count, pros.*')
-                                   .where(prestations: { id: session[:prestations] })
-                                   .group('pros.id')
-                                   .having('count(*) = ?', session[:prestations].length)
-    @prestation_references = Prestation.find(session[:prestations]).pluck(:reference)
-  end
+module Pros
+  # Controller to finalising a booking, choosing available pros.
+  class BookingsController < ApplicationController
+    def new
+      @pros = Pro.joins(:prestations).select('count(*) as count, pros.*')
+                 .where(prestations: { id: session[:prestations] })
+                 .group('pros.id')
+                 .having('count(*) = ?', session[:prestations].length)
+      @prestation_references = Prestation.find(session[:prestations]).pluck(:reference)
+    end
 
-  def create
+    def create; end
   end
 end
