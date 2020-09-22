@@ -1,0 +1,23 @@
+.form
+  = simple_form_for @booking do |f|
+    .separator
+      = f.label 'Please select prestations you are looking for'
+      = f.association :prestations,
+                       as: :check_boxes,
+                       label: '',
+                       label_method: :reference,
+                       value_method: :id
+    .separator
+      = f.label 'Please enter your e-mail address'
+      = f.input_field :email,
+                      placeholder: 'ex: abc@gmail.com'
+    .separator
+      = f.label 'Please enter your fullname'
+      = f.input_field :name,
+                      placeholder: 'ex: Sean Paul'
+    .separator
+      = f.label 'Please enter your address'
+      = f.input_field :address,
+                      placeholder: 'ex: 27 rue camelinat 42000 Saint-Etienne'
+    .separator
+      = f.button :submit, value: 'Book Prestation(s)'
