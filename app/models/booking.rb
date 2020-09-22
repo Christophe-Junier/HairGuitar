@@ -4,6 +4,7 @@
 class Booking < ApplicationRecord
   has_many :booked_prestations
   has_many :prestations, through: :booked_prestations
+  belongs_to :pro
 
   validates_format_of :email, with: /\A\S+@.+\.\S+\z/, message: 'your email address is not valid'
   validates :name, presence: true

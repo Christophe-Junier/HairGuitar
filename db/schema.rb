@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_09_21_104838) do
+ActiveRecord::Schema.define(version: 2020_09_22_100817) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(version: 2020_09_21_104838) do
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "pro_id", null: false
     t.index ["pro_id"], name: "index_appointments_on_pro_id"
+    t.index ["starts_at", "ends_at", "pro_id"], name: "index_appointments_on_starts_at_and_ends_at_and_pro_id", unique: true
   end
 
   create_table "booked_prestations", force: :cascade do |t|
@@ -42,6 +43,9 @@ ActiveRecord::Schema.define(version: 2020_09_21_104838) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.datetime "starts_at"
+    t.bigint "pro_id", null: false
+    t.index ["email", "name", "starts_at", "pro_id"], name: "index_bookings_on_email_and_name_and_starts_at_and_pro_id", unique: true
+    t.index ["pro_id"], name: "index_bookings_on_pro_id"
   end
 
   create_table "opening_hours", force: :cascade do |t|
@@ -69,6 +73,7 @@ ActiveRecord::Schema.define(version: 2020_09_21_104838) do
     t.integer "max_kilometers"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["name", "address", "lat", "lng"], name: "index_pros_on_name_and_address_and_lat_and_lng", unique: true
   end
 
   create_table "pros_prestations", force: :cascade do |t|
@@ -83,6 +88,7 @@ ActiveRecord::Schema.define(version: 2020_09_21_104838) do
   add_foreign_key "appointments", "pros"
   add_foreign_key "booked_prestations", "bookings"
   add_foreign_key "booked_prestations", "prestations"
+  add_foreign_key "bookings", "pros"
   add_foreign_key "opening_hours", "pros"
   add_foreign_key "pros_prestations", "prestations"
   add_foreign_key "pros_prestations", "pros"
