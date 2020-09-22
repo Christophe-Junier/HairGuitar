@@ -8,5 +8,6 @@ class Prestation < ApplicationRecord
   has_many :pros, through: :pros_prestations
 
   validates :reference, presence: true
+  validates :reference, uniqueness: true
   validates :duration, presence: true
 end
