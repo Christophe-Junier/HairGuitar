@@ -1,0 +1,56 @@
+// Place all the styles related to the booking controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+.form {
+  display: flex;
+  justify-content: center;
+  #new_booking{
+    border: 1px solid black;
+    border-radius: 5px;
+    margin-top: 6rem;
+    background-color: #00BFFF;
+  }
+}
+.separator{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  margin: 3rem;
+  label {
+    font-weight: bold;
+    margin: 1rem;
+    text-decoration: underline;
+  }
+}
+
+
+.booking_prestations {
+  display: flex;
+  flex-direction: row;
+  label {
+    font-weight: normal;
+    text-decoration: none;
+  }
+}
+
+.btn{
+  background-color: #203354;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 8px;
+}
+.btn {
+ transition-duration: 0.4s;
+}
+
+.btn:hover {
+ background-color: #008CBA; /* Green */
+ color: white;
+ cursor: pointer;
+}
