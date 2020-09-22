@@ -43,7 +43,7 @@ ActiveRecord::Schema.define(version: 2020_09_22_100817) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.datetime "starts_at"
-    t.bigint "pro_id", null: false
+    t.bigint "pro_id"
     t.index ["email", "name", "starts_at", "pro_id"], name: "index_bookings_on_email_and_name_and_starts_at_and_pro_id", unique: true
     t.index ["pro_id"], name: "index_bookings_on_pro_id"
   end
