@@ -9,4 +9,5 @@ class OpeningHour < ApplicationRecord
   validates :ends_at, presence: true
   validates :starts_at, presence: true
   validates_inclusion_of :day, in: DAY_ARRAY, message: 'day is not included in the list'
+  validates :day, uniqueness: true
 end
