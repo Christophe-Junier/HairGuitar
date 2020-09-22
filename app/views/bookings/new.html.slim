@@ -6,7 +6,9 @@
                        as: :check_boxes,
                        label: '',
                        label_method: :reference,
-                       value_method: :id
+                       value_method: :id,
+                       include_hidden: false,
+                       include_blank: false
     .separator
       = f.label 'Please enter your e-mail address'
       = f.input_field :email,

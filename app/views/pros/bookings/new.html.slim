@@ -1,0 +1,34 @@
+.reminder
+  h2
+    | Reminder
+    hr
+  .row_container
+    .recap
+      span
+        | Email:
+      span
+        | Fullname:
+      span
+        | Address:
+      span
+        | Choosen prestations:
+    .recap_values
+      span
+        = session[:booking]['email']
+      span
+        = session[:booking]['name']
+      span
+        = session[:booking]['address']
+      span
+        - @prestation_references.each do |reference|
+            = reference + ' '
+br
+hr
+.pros_presentation
+  h2
+    | Our avaible professional for your prestations
+  .pros_container
+    - @pros.each do |pro|
+      .pros
+        .name
+          = pro.name

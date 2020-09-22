@@ -5,9 +5,9 @@ class BookingsController < ApplicationController
   end
 
   def create
-    @booking = Booking.new(bookings_params)
-    @booking.prestations << Prestation.where(id: params[:booking][:prestation_ids])
-    redirect_to new_booking_pro_path(booking: @booking)
+    session[:booking] = Booking.new(bookings_params)
+    session[:prestations] = params[:booking][:prestation_ids]
+    redirect_to new_pros_booking_path
   end
 
   private

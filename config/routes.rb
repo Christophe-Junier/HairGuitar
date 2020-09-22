@@ -5,4 +5,8 @@ Rails.application.routes.draw do
 
   resources :pros, except: [:destroy]
   resources :bookings, except: [:destroy]
+
+  namespace :pros do
+    resources :bookings, except: [:destroy]
+  end
 end
