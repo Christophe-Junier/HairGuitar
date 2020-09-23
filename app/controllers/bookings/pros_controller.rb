@@ -42,5 +42,23 @@ module Bookings
     end
     # rubocop:enable Metrics/MethodLength
     # rubocop:enable Metrics/AbcSize
+
+    def create
+      @booking = Booking.find(params[:booking_id])
+      if @booking.update(pro_id: params[:pro][:pro_id])
+        create_appointment(@booking)
+        redirect_to root_path
+      else
+        redirect_back(fallback_location: root_path, alert: @booking.errors.messages)
+      end
+    end
+
+    private
+
+    def create_appointment(booking)
+      Appointment.create(starts_at: booking.starts_at,
+                         ends_at: booking.starts_at + booking.prestations.pluck(:duration).sum.minutes,
+                         pro_id: booking.pro_id)
+    end
   end
 end
