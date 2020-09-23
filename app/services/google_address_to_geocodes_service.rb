@@ -2,7 +2,6 @@
 
 # Service to generate lng and lat with an address using google API
 class GoogleAddressToGeocodesService
-
   def get_geocodes(address)
     if address.blank?
       OpenStruct.new(lat: '', lng: '')
@@ -10,7 +9,7 @@ class GoogleAddressToGeocodesService
       client = HTTPClient.new
       uri = "https://maps.googleapis.com/maps/api/geocode/json?address=#{address.gsub(' ', '+')}"
       api_key = ENV['GOOGLE_API_KEY']
-      structured_response = JSON.parse(client.get_content(uri + '&key=' + api_key))
+      structured_response = JSON.parse(client.get_content("#{uri}&key=#{api_key}"))
       OpenStruct.new(structured_response['results'].first['geometry']['location'])
     end
   end
