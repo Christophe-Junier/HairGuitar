@@ -35,5 +35,18 @@ hr
     p
       | We re sorry but no professional are available for your prestation(s)
   - else
-    p
-      | yay
+    = simple_form_for :pro, url: booking_pros_path do |f|
+      .separator
+        = f.label 'Please select an available professional'
+        = f.input :pro_id,
+                  collection: @pros.map{ |pro| [pro.id, pro.name]},
+                  required: false,
+                  label: false,
+                  label_method: :second,
+                  value_method: :first,
+                  include_hidden: false,
+                  include_blank: false
+      .separator
+        = f.button :submit,
+                   value: 'Confirm',
+                   id: 'pro_submit'
