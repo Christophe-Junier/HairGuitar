@@ -18,6 +18,7 @@ The setups steps expect following tools installed on the system.
 - Rails [6.0.3](https://guides.rubyonrails.org/getting_started.html)
 - Postgresql [Installation on linux systems](https://www.veremes.com/installation-postgresql-linux)
 - Google API Key [How it works ?](https://developers.google.com/maps/documentation/javascript/get-api-key)
+- GraphViz [Installation on linux](https://doc.ubuntu-fr.org/graphviz)
 
 Note: The Google Api key must be added to .env.exemple and the file must be renamed .env
 
