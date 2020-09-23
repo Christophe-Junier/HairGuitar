@@ -22,6 +22,12 @@
     margin: 1rem;
     text-decoration: underline;
   }
+  .time_selector{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    align-self: center;
+  }
 }
 
 
@@ -50,7 +56,21 @@
 }
 
 .btn:hover {
- background-color: #008CBA; /* Green */
+ background-color: #008CBA;
  color: white;
  cursor: pointer;
+}
+
+.simple-calendar {
+  .day:hover {
+    background-color: #008CBA !important;
+    color: white;
+    cursor: pointer;
+  }
+  .day {
+    background-color: white;
+  }
+  .hidden {
+    display: none;
+  }
 }
