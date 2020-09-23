@@ -15,8 +15,10 @@
         = date.day
         .hidden
           = date
+
       = f.input_field :starts_at,
-                      as: :hidden
+                      as: :hidden,
+                      id: 'starts_at_days'
     .separator
        = f.label 'Please choose an hour'
        .time_selector
@@ -35,3 +37,13 @@
                       placeholder: 'ex: 27 rue camelinat 42000 Saint-Etienne'
     .separator
       = f.button :submit, value: 'Book Prestation(s)'
+
+javascript:
+  $('.day').click(function() {
+    $('.day').css('background-color', '');
+    $(this).css('background-color', '#008CBA');
+    date = $(this).children().text().split("-");
+    $('#booking_starts_at_1i').val(date[0]);
+    $('#booking_starts_at_2i').val(date[1]);
+    $('#booking_starts_at_3i').val(date[2]);
+  });
