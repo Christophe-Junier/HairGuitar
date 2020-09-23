@@ -10,6 +10,18 @@
                        include_hidden: false,
                        include_blank: false
     .separator
+      = f.label 'Please choose a date'
+      = month_calendar do |date|
+        = date.day
+        .hidden
+          = date
+      = f.input_field :starts_at,
+                      as: :hidden
+    .separator
+       = f.label 'Please choose an hour'
+       .time_selector
+         = f.time_select :starts_at, minute_step: 30
+    .separator
       = f.label 'Please enter your e-mail address'
       = f.input_field :email,
                       placeholder: 'ex: abc@gmail.com'
