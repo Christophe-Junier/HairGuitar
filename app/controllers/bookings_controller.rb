@@ -7,14 +7,12 @@ class BookingsController < ApplicationController
   end
 
   def create
-    session[:booking] = Booking.new(bookings_params)
-    session[:prestations] = params[:booking][:prestation_ids]
-    redirect_to new_pros_booking_path
+    @booking = Booking.new(bookings_params)
   end
 
   private
 
   def bookings_params
-    params.require(:booking).permit(:email, :name, :address)
+    params.require(:booking).permit(:email, :name, :address, :starts_at, prestation_ids: [])
   end
 end
