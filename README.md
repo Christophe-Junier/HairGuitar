@@ -39,13 +39,22 @@ Copy the sample database.yml file and edit the database configuration as require
 cp config/database.yml.sample config/database.yml
 ```
 
-##### 3. Create and setup the database
+##### 3.1 Setup webpacker dependencies
+
+Run the following commands to create and setup the webpacker.
+
+
+```ruby
+yarn install --check-files
+```
+
+##### 3.2 Create and setup the database
 
 Run the following commands to create and setup the database.
 
 ```ruby
 bundle exec rake db:create
-bundle exec rake db:setup
+bundle exec rake db:migrate
 ```
 
 ##### 4.1 Fill the database with seeds
