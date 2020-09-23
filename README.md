@@ -16,8 +16,10 @@ The setups steps expect following tools installed on the system.
 - Github
 - Ruby [2.7.1](https://www.ruby-lang.org/en/news/2020/03/31/ruby-2-7-1-released/)
 - Rails [6.0.3](https://guides.rubyonrails.org/getting_started.html)
-- Postgresql[Installation on linux systems](https://www.veremes.com/installation-postgresql-linux)
-- Google API Key [Comment ça marche ?](https://developers.google.com/maps/documentation/javascript/get-api-key)
+- Postgresql [Installation on linux systems](https://www.veremes.com/installation-postgresql-linux)
+- Google API Key [How it works ?](https://developers.google.com/maps/documentation/javascript/get-api-key)
+
+Note: The Google Api key must be added to .env.exemple and the file must be renamed .env
 
 
 ##### 1. Check out the repository

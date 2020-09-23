@@ -12,8 +12,4 @@ class Booking < ApplicationRecord
   validates :starts_at, presence: true
   validates :lat, presence: true
   validates :lng, presence: true
-
-  # coordinatify is used by many models, so its stands in ApplicationRecord
-  before_create :coordinatify
-  before_update :coordinatify
 end

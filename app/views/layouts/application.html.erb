@@ -10,6 +10,17 @@
   </head>
 
   <body>
+    <% flash.each do |type, messages| %>
+      <div class='flashes'>
+        <% messages.each do |title, message|  %>
+          <div>
+            <% unless ['lat', 'lng'].include?(title) %>
+              <%= title.to_s + ': ' + message[0].to_s  %>
+            <% end %>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
     <%= yield %>
   </body>
 </html>
