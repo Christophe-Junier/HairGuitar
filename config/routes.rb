@@ -3,10 +3,8 @@
 Rails.application.routes.draw do
   root 'home#index'
 
-  resources :pros, except: [:destroy]
-  resources :bookings, except: [:destroy]
-
-  namespace :pros do
-    resources :bookings, except: [:destroy]
+  resources :bookings, except: [:destroy] do
+    resources :pros, only: [:new], controller: "bookings/pros"
   end
+
 end
