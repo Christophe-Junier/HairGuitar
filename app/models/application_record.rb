@@ -4,10 +4,11 @@
 class ApplicationRecord < ActiveRecord::Base
   self.abstract_class = true
 
-  def coordinatify
+  def geocode(address)
     # GOOGLE API CALL SERVICE WILL BE CALLED THERE
-    # coordinates = AddressToCoordinatesService.new(self.address)
-    # self.lat = coordinates.lat
-    # self.lng = coordinates.lng
+    geocode_service = GoogleAddressToGeocodesService.new
+    results = geocode_service.get_geocodes(self.address)
+    self.lat = results.lat
+    self.lng = results.lng
   end
 end
