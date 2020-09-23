@@ -1,0 +1,39 @@
+.reminder
+  h2
+    | Reminder
+    hr
+  .row_container
+    .recap
+      span
+        | Email:
+      span
+        | Fullname:
+      span
+        | Address:
+      span
+        | Choosen prestation(s):
+      span
+        | Choosen date:
+    .recap_values
+      span
+        = @booking.email
+      span
+        = @booking.name
+      span
+        = @booking.address
+      span
+        - @booking.prestations.each do |prestation|
+            = prestation.reference + ' '
+      span
+        = @booking.starts_at.strftime("%d-%m-%Y at %H:%M")
+br
+hr
+.pros_presentation
+  h2
+    | Our avaible professional for your prestation(s)
+  - if @pros.empty?
+    p
+      | We re sorry but no professional are available for your prestation(s)
+  - else
+    p
+      | yay
