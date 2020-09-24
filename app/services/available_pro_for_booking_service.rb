@@ -10,11 +10,11 @@ class AvailableProForBookingService
 
   # Processing all methods to get the available pro list for a booking
   def process_all
-    @pros = open_pros()
-    @pros = no_crossing_appointment_pros()
-    @pros = available_for_prestations_pros()
-    @pros = avaible_at_booking_distance_pro()
-    @pros
+    @pros = open_pros
+    @pros = no_crossing_appointment_pros
+    @pros = available_for_prestations_pros
+    @pros = avaible_at_booking_distance_pro
+    @pros.uniq
   end
 
   # Pros that can are open at booking time
@@ -45,7 +45,7 @@ class AvailableProForBookingService
              id: Prestation.pluck(:id) - \
                  @booking.prestations.ids
            }
-         ).uniq
+         )
   end
 
   # Pros with max distance that are within booking distance
@@ -55,6 +55,5 @@ class AvailableProForBookingService
       distance = address_distance_service.get_pro_booking_distance(pro, @booking).to_i
       @pros.delete_at(index) unless distance <= pro.max_kilometers
     end
-    @pros = available_for_prestations_pros
   end
 end
