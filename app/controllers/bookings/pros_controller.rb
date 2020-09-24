@@ -7,6 +7,7 @@ module Bookings
     # rubocop:disable Metrics/AbcSize
     def new
       @booking = Booking.find(params[:booking_id])
+      booking_end_time = @booking.starts_at + @booking.prestations.pluck(:duration).sum.minutes
 
       # Pros that can are open at booking time
       # Problems on time type on postgres that always add a date on time type column
@@ -19,9 +20,10 @@ module Bookings
 
       # Pros that can dont have crossing appointments
       no_crossing_appointment_pros = open_pros.joins(:appointments)
-                                              .where.not('appointments.starts_at < ? AND appointments.ends_at > ?',
-                                                         @booking.starts_at,
-                                                         @booking.starts_at)
+                                              .where.not('appointments.starts_at < ? AND appointments.ends_at > ?
+                                                         AND appointments.starts_at < ? AND appointments.ends_at > ?',
+                                                         @booking.starts_at, @booking.starts_at,
+                                                         booking_end_time, booking_end_time)
 
       # Pros that can handle booking prestations
       available_for_prestations_pros = no_crossing_appointment_pros.joins(:prestations)
