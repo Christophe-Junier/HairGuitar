@@ -51,9 +51,8 @@ class AvailableProForBookingService
   # Pros with max distance that are within booking distance
   def avaible_at_booking_distance_pro
     @pros.each_with_index do |pro, index|
-      address_distance_service = GoogleAddressDistanceCalculationService.new
-      distance = address_distance_service.get_pro_booking_distance(pro, @booking).to_i
-      @pros.delete_at(index) unless distance <= pro.max_kilometers
+      distance = GoogleAddressDistanceCalculationService.new(pro, @booking).pro_booking_distance
+      @pros.delete_at(index) unless distance.to_i <= pro.max_kilometers
     end
   end
 end
