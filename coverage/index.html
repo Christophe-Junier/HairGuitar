@@ -14,7 +14,7 @@
       <img src="./assets/0.12.2/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" class="hide">
-      <div class="timestamp">Generated <abbr class="timeago" title="2020-09-24T10:18:36+02:00">2020-09-24T10:18:36+02:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2020-09-24T10:32:28+02:00">2020-09-24T10:32:28+02:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -23,14 +23,14 @@
     <span class="group_name">All Files</span>
     (<span class="covered_percent">
       <span class="green">
-  96.7%
+  97.27%
 </span>
 
      </span>
      covered at
      <span class="covered_strength">
        <span class="green">
-         1.26
+         1.25
        </span>
     </span> hits/line
     )
@@ -43,11 +43,11 @@
   </div>
 
   <div class="t-line-summary">
-    <b>182</b> relevant lines,
-    <span class="green"><b>176</b> lines covered</span> and
-    <span class="red"><b>6</b> lines missed. </span>
+    <b>183</b> relevant lines,
+    <span class="green"><b>178</b> lines covered</span> and
+    <span class="red"><b>5</b> lines missed. </span>
     (<span class="green">
-  96.7%
+  97.27%
 </span>
 )
   </div>
@@ -83,12 +83,12 @@
         
           <tr class="t-file">
             <td class="strong t-file__name"><a href="#b6eaa9c0e83a5e6c73b9cdbcaf1754415de75f66" class="src_link" title="app/models/application_record.rb">app/models/application_record.rb</a></td>
-            <td class="red strong cell--number t-file__coverage">42.86 %</td>
-            <td class="cell--number">14</td>
-            <td class="cell--number">7</td>
+            <td class="red strong cell--number t-file__coverage">50.00 %</td>
+            <td class="cell--number">12</td>
+            <td class="cell--number">6</td>
             <td class="cell--number">3</td>
-            <td class="cell--number">4</td>
-            <td class="cell--number">0.43</td>
+            <td class="cell--number">3</td>
+            <td class="cell--number">0.50</td>
             
           </tr>
         
@@ -139,11 +139,11 @@
           <tr class="t-file">
             <td class="strong t-file__name"><a href="#5763c6733bd8c27bad0a6888a5798694975339bc" class="src_link" title="app/services/google_address_to_geocodes_service.rb">app/services/google_address_to_geocodes_service.rb</a></td>
             <td class="green strong cell--number t-file__coverage">100.00 %</td>
-            <td class="cell--number">16</td>
-            <td class="cell--number">9</td>
-            <td class="cell--number">9</td>
+            <td class="cell--number">20</td>
+            <td class="cell--number">11</td>
+            <td class="cell--number">11</td>
             <td class="cell--number">0</td>
-            <td class="cell--number">1.78</td>
+            <td class="cell--number">1.45</td>
             
           </tr>
         
@@ -530,7 +530,7 @@
     <h3>app/models/application_record.rb</h3>
     <h4>
       <span class="red">
-  42.86%
+  50.0%
 </span>
 
       lines covered
@@ -539,9 +539,9 @@
     
 
     <div class="t-line-summary">
-      <b>7</b> relevant lines.
+      <b>6</b> relevant lines.
       <span class="green"><b>3</b> lines covered</span> and
-      <span class="red"><b>4</b> lines missed.</span>
+      <span class="red"><b>3</b> lines missed.</span>
     </div>
 
     
@@ -629,13 +629,13 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="8">
+          <li class="missed" data-hits="0" data-linenumber="8">
             
             
 
             
 
-            <code class="ruby">    # GOOGLE API CALL SERVICE WILL BE CALLED THERE</code>
+            <code class="ruby">    results = GoogleAddressToGeocodesService.new(address).geocodes_address</code>
           </li>
         </div>
       
@@ -646,7 +646,7 @@
 
             
 
-            <code class="ruby">    geocode_service = GoogleAddressToGeocodesService.new</code>
+            <code class="ruby">    self.lat = results.lat</code>
           </li>
         </div>
       
@@ -657,34 +657,12 @@
 
             
 
-            <code class="ruby">    results = geocode_service.get_geocodes(address)</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="missed" data-hits="0" data-linenumber="11">
-            
-            
-
-            
-
-            <code class="ruby">    self.lat = results.lat</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="missed" data-hits="0" data-linenumber="12">
-            
-            
-
-            
-
             <code class="ruby">    self.lng = results.lng</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="13">
+          <li class="never" data-hits="" data-linenumber="11">
             
             
 
@@ -695,7 +673,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="14">
+          <li class="never" data-hits="" data-linenumber="12">
             
             
 
@@ -1497,8 +1475,8 @@
     
 
     <div class="t-line-summary">
-      <b>9</b> relevant lines.
-      <span class="green"><b>9</b> lines covered</span> and
+      <b>11</b> relevant lines.
+      <span class="green"><b>11</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
 
@@ -1560,40 +1538,40 @@
 
             
 
-            <code class="ruby">  def get_geocodes(address)</code>
+            <code class="ruby">  def initialize(address)</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="3" data-linenumber="6">
-            <span class="hits">3</span>
+          <li class="covered" data-hits="2" data-linenumber="6">
+            <span class="hits">2</span>
             
 
             
 
-            <code class="ruby">    if address.blank?</code>
+            <code class="ruby">    @address = address</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="7">
-            <span class="hits">1</span>
+          <li class="covered" data-hits="2" data-linenumber="7">
+            <span class="hits">2</span>
             
 
             
 
-            <code class="ruby">      OpenStruct.new(lat: &#39;&#39;, lng: &#39;&#39;)</code>
+            <code class="ruby">    @client = HTTPClient.new</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="8">
-            
-            
-
+          <li class="covered" data-hits="2" data-linenumber="8">
+            <span class="hits">2</span>
             
 
-            <code class="ruby">    else</code>
+            
+
+            <code class="ruby">    @uri = &quot;https://maps.googleapis.com/maps/api/geocode/json?address=#{@address.gsub(&#39; &#39;, &#39;+&#39;)}&quot;</code>
           </li>
         </div>
       
@@ -1604,67 +1582,12 @@
 
             
 
-            <code class="ruby">      client = HTTPClient.new</code>
+            <code class="ruby">    @api_key = ENV[&#39;GOOGLE_API_KEY&#39;]</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="2" data-linenumber="10">
-            <span class="hits">2</span>
-            
-
-            
-
-            <code class="ruby">      uri = &quot;https://maps.googleapis.com/maps/api/geocode/json?address=#{address.gsub(&#39; &#39;, &#39;+&#39;)}&quot;</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="2" data-linenumber="11">
-            <span class="hits">2</span>
-            
-
-            
-
-            <code class="ruby">      api_key = ENV[&#39;GOOGLE_API_KEY&#39;]</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="2" data-linenumber="12">
-            <span class="hits">2</span>
-            
-
-            
-
-            <code class="ruby">      structured_response = JSON.parse(client.get_content(&quot;#{uri}&amp;key=#{api_key}&quot;))</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="2" data-linenumber="13">
-            <span class="hits">2</span>
-            
-
-            
-
-            <code class="ruby">      OpenStruct.new(structured_response[&#39;results&#39;].first[&#39;geometry&#39;][&#39;location&#39;])</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="14">
-            
-            
-
-            
-
-            <code class="ruby">    end</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="15">
+          <li class="never" data-hits="" data-linenumber="10">
             
             
 
@@ -1675,7 +1598,106 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="16">
+          <li class="never" data-hits="" data-linenumber="11">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="12">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">  def geocodes_address</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="2" data-linenumber="13">
+            <span class="hits">2</span>
+            
+
+            
+
+            <code class="ruby">    if @address.blank?</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="14">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">      OpenStruct.new(lat: &#39;&#39;, lng: &#39;&#39;)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="15">
+            
+            
+
+            
+
+            <code class="ruby">    else</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="16">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">      structured_response = JSON.parse(@client.get_content(&quot;#{@uri}&amp;key=#{@api_key}&quot;))</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="17">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">      OpenStruct.new(structured_response[&#39;results&#39;].first[&#39;geometry&#39;][&#39;location&#39;])</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="18">
+            
+            
+
+            
+
+            <code class="ruby">    end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="19">
+            
+            
+
+            
+
+            <code class="ruby">  end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="20">
             
             
 
@@ -8610,18 +8632,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="3" data-linenumber="6">
-            <span class="hits">3</span>
-            
-
-            
-
-            <code class="ruby">  let(:service) { GoogleAddressToGeocodesService.new }</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="2" data-linenumber="7">
+          <li class="covered" data-hits="2" data-linenumber="6">
             <span class="hits">2</span>
             
 
@@ -8632,24 +8643,35 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="8">
+          <li class="covered" data-hits="2" data-linenumber="7">
+            <span class="hits">2</span>
+            
+
+            
+
+            <code class="ruby">  let(:service) { GoogleAddressToGeocodesService.new(address) }</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="2" data-linenumber="8">
+            <span class="hits">2</span>
+            
+
+            
+
+            <code class="ruby">  let(:no_address_service) { GoogleAddressToGeocodesService.new(&#39;&#39;) }</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="9">
             
             
 
             
 
             <code class="ruby"></code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="9">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">  it &#39;get_geocodes return empty lat and lng with no address&#39; do</code>
           </li>
         </div>
       
@@ -8660,18 +8682,18 @@
 
             
 
-            <code class="ruby">    expect(service.get_geocodes(&#39;&#39;)).to eq(OpenStruct.new(lat: &#39;&#39;, lng: &#39;&#39;))</code>
+            <code class="ruby">  it &#39;geocodes_address return empty lat and lng with no address&#39; do</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="11">
-            
-            
-
+          <li class="covered" data-hits="1" data-linenumber="11">
+            <span class="hits">1</span>
             
 
-            <code class="ruby">  end</code>
+            
+
+            <code class="ruby">    expect(no_address_service.geocodes_address).to eq(OpenStruct.new(lat: &#39;&#39;, lng: &#39;&#39;))</code>
           </li>
         </div>
       
@@ -8682,18 +8704,18 @@
 
             
 
-            <code class="ruby"></code>
+            <code class="ruby">  end</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="13">
-            <span class="hits">1</span>
+          <li class="never" data-hits="" data-linenumber="13">
+            
             
 
             
 
-            <code class="ruby">  it &#39;get_geocodes return lat and lng with an address&#39; do</code>
+            <code class="ruby"></code>
           </li>
         </div>
       
@@ -8704,7 +8726,7 @@
 
             
 
-            <code class="ruby">    expect(service.get_geocodes(address).lat).to eq(45.4386206)</code>
+            <code class="ruby">  it &#39;geocodes_address return lat and lng with an address&#39; do</code>
           </li>
         </div>
       
@@ -8715,7 +8737,7 @@
 
             
 
-            <code class="ruby">    expect(service.get_geocodes(address).lng).to eq(4.3964458)</code>
+            <code class="ruby">    expect(service.geocodes_address).to eq(OpenStruct.new(lat: 45.4386206, lng: 4.3964458))</code>
           </li>
         </div>
       
