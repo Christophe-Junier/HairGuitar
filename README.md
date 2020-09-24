@@ -31,32 +31,24 @@ Note: The Google Api key must be added to .env.exemple and the file must be rena
 - CLI:   gh repo clone Christophe-Junier/HairGuitar
 ```
 
-##### 2. Create database.yml file
+##### 2. Setup webpacker dependencies
 
-Copy the sample database.yml file and edit the database configuration as required.
+Run the following commands to create and setup the webpacker.
 
-```bash
-cp config/database.yml.sample config/database.yml
+```ruby
+yarn install --check-files
 ```
 
-##### 3. Create and setup the database
+##### 3 Create and setup the database
 
 Run the following commands to create and setup the database.
 
 ```ruby
 bundle exec rake db:create
-bundle exec rake db:setup
+bundle exec rake db:migrate
 ```
 
-##### 4.1 Fill the database with seeds
-
-Run the following commands to seed the database.
-
-```ruby
-bundle exec rake db:seeds
-```
-
-##### 4.2 Fill the database with json file
+##### 4 Fill the database with json file
 
 1- Put the json file on the root of the project /HairGuitar (the file MUST be named data.json)
 
