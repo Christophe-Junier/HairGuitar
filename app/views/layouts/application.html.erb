@@ -12,12 +12,18 @@
   <body>
     <% flash.each do |type, messages| %>
       <div class='flashes'>
-        <% messages.each do |title, message|  %>
+        <% if messages.is_a?(String) %>
           <div>
-            <% unless ['lat', 'lng'].include?(title) %>
-              <%= title.to_s + ': ' + message[0].to_s  %>
-            <% end %>
+            <%= messages %>
           </div>
+        <% else %>
+          <% messages.each do |title, message|  %>
+            <div>
+              <% unless ['lat', 'lng'].include?(title) %>
+                <%= title.to_s + ': ' + message[0].to_s  %>
+              <% end %>
+            </div>
+          <% end %>
         <% end %>
       </div>
     <% end %>

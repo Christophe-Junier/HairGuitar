@@ -12,7 +12,7 @@ module Bookings
       @booking = Booking.find(params[:booking_id])
       if @booking.update(pro_id: params[:pro][:pro_id])
         create_appointment(@booking)
-        redirect_to root_path
+        redirect_to root_path, notice: 'Thanks, your booking has been done !'
       else
         redirect_back(fallback_location: root_path, alert: @booking.errors.messages)
       end

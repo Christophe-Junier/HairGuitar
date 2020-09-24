@@ -30,7 +30,7 @@ class AvailableProForBookingService
 
   # Pros that can dont have crossing appointments
   def no_crossing_appointment_pros
-    @pros.joins(:appointments)
+    @pros.left_outer_joins(:appointments)
          .where.not('appointments.starts_at < ? AND appointments.ends_at > ?
                     AND appointments.starts_at < ? AND appointments.ends_at > ?',
                     @booking.starts_at, @booking.starts_at,
