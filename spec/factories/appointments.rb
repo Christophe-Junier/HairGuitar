@@ -2,7 +2,7 @@
 
 FactoryBot.define do
   factory :appointment do
-    ends_at   { DateTime.now }
-    starts_at { DateTime.now }
+    ends_at   { DateTime.now + 30.minutes }
+    starts_at { DateTime.now - 30.minutes }
   end
 end
