@@ -34,6 +34,7 @@ class AvailableProForBookingService
       pro.appointments.each do |appointment|
         if booking_start_between(appointment) || booking_end_between(appointment) || booking_overlap(appointment)
           @pros.delete_at(index)
+          break # important ! exit the loop if pro deleted, avoid deleting next pro !
         end
       end
     end
