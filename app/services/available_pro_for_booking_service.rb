@@ -11,9 +11,9 @@ class AvailableProForBookingService
   # Processing all methods to get the available pro list for a booking
   def process_all
     @pros = open_pros
-    @pros = no_crossing_appointment_pros
     @pros = available_for_prestations_pros
     @pros = avaible_at_booking_distance_pro
+    @pros = no_crossing_appointment_pros
     @pros.uniq
   end
 
@@ -30,11 +30,13 @@ class AvailableProForBookingService
 
   # Pros that can dont have crossing appointments
   def no_crossing_appointment_pros
-    @pros.left_outer_joins(:appointments)
-         .where.not('appointments.starts_at < ? AND appointments.ends_at > ?
-                    AND appointments.starts_at < ? AND appointments.ends_at > ?',
-                    @booking.starts_at, @booking.starts_at,
-                    @booking_end_time, @booking_end_time)
+    @pros.each_with_index do |pro, index|
+      pro.appointments.each do |appointment|
+        if booking_start_between(appointment) || booking_end_between(appointment) || booking_overlap(appointment)
+          @pros.delete_at(index)
+        end
+      end
+    end
   end
 
   # Pros that can handle booking prestations
@@ -54,5 +56,19 @@ class AvailableProForBookingService
       distance = GoogleAddressDistanceCalculationService.new(pro, @booking).pro_booking_distance
       @pros.delete_at(index) unless distance.to_i <= pro.max_kilometers
     end
+  end
+
+  private
+
+  def booking_start_between(appointment)
+    @booking.starts_at >= appointment.starts_at && @booking.starts_at < appointment.ends_at
+  end
+
+  def booking_end_between(appointment)
+    @booking_end_time > appointment.starts_at && @booking_end_time <= appointment.ends_at
+  end
+
+  def booking_overlap(appointment)
+    @booking.starts_at <= appointment.starts_at && @booking_end_time >= appointment.ends_at
   end
 end
