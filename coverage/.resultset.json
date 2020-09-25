@@ -558,8 +558,8 @@
           null,
           1,
           1,
-          4,
-          4,
+          5,
+          5,
           null,
           null
         ]
@@ -570,12 +570,12 @@
           null,
           1,
           1,
-          2,
-          2,
-          2,
-          2,
-          2,
-          2,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
           null,
           null
         ]
@@ -586,9 +586,9 @@
           null,
           1,
           1,
-          1,
-          1,
-          1,
+          3,
+          3,
+          3,
           null,
           null
         ]
@@ -599,8 +599,8 @@
           null,
           1,
           1,
-          1,
-          1,
+          3,
+          3,
           null,
           null
         ]
@@ -611,11 +611,11 @@
           null,
           1,
           1,
-          5,
-          5,
-          5,
-          5,
-          5,
+          7,
+          7,
+          7,
+          7,
+          7,
           null,
           null
         ]
@@ -672,6 +672,118 @@
           null
         ]
       },
+      "/home/christophe/Bureau/HairGuitar/spec/services/available_pro_for_booking_service_spec.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          null,
+          1,
+          3,
+          3,
+          3,
+          2,
+          2,
+          3,
+          3,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "/home/christophe/Bureau/HairGuitar/app/services/available_pro_for_booking_service.rb": {
+        "lines": [
+          null,
+          null,
+          null,
+          1,
+          1,
+          2,
+          2,
+          null,
+          null,
+          null,
+          null,
+          1,
+          2,
+          2,
+          2,
+          2,
+          2,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          2,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          2,
+          2,
+          2,
+          1,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          2,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          2,
+          2,
+          2,
+          null,
+          null,
+          null,
+          1,
+          null,
+          1,
+          2,
+          null,
+          null,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
       "/home/christophe/Bureau/HairGuitar/spec/services/google_address_distance_calculation_service_spec.rb": {
         "lines": [
           null,
@@ -696,18 +808,18 @@
           null,
           1,
           1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
           null,
           null,
           null,
           1,
-          1,
-          1,
+          3,
+          3,
           null,
           null
         ]
@@ -777,6 +889,51 @@
           null
         ]
       },
+      "/home/christophe/Bureau/HairGuitar/app/models/opening_hour.rb": {
+        "lines": [
+          null,
+          null,
+          null,
+          1,
+          1,
+          null,
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "/home/christophe/Bureau/HairGuitar/app/models/pros_prestation.rb": {
+        "lines": [
+          null,
+          null,
+          null,
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "/home/christophe/Bureau/HairGuitar/app/models/prestation.rb": {
+        "lines": [
+          null,
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          1,
+          1,
+          1,
+          null
+        ]
+      },
       "/home/christophe/Bureau/HairGuitar/app/models/booking.rb": {
         "lines": [
           null,
@@ -795,8 +952,19 @@
           1,
           null
         ]
+      },
+      "/home/christophe/Bureau/HairGuitar/app/models/booked_prestation.rb": {
+        "lines": [
+          null,
+          null,
+          null,
+          1,
+          1,
+          1,
+          null
+        ]
       }
     },
-    "timestamp": 1600936348
+    "timestamp": 1601026866
   }
 }
