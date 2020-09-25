@@ -11,10 +11,10 @@ class AvailableProForBookingService
   # Processing all methods to get the available pro list for a booking
   def process_all
     @pros = open_pros
-    @pros = available_for_prestations_pros
+    @pros = available_for_prestations_pros.uniq
     @pros = avaible_at_booking_distance_pro
     @pros = no_crossing_appointment_pros
-    @pros.uniq
+    @pros
   end
 
   # Pros that can are open at booking time
